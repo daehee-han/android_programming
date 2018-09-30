@@ -16,11 +16,11 @@ public class MainActivity extends AppCompatActivity {
 
         Calendar now = Calendar.getInstance(); // 현재 시각
         now.add(Calendar.MINUTE, 1); // 1분 후 시각
-        int hour = now.get(Calendar.HOUR);
+        int hour = now.get(Calendar.HOUR_OF_DAY);
         int minute = now.get(Calendar.MINUTE);
         Log.i("Cal", "hour=" + hour);
         Log.i("Cal", "minute=" + minute);
-        createAlarm("잠을 깨자 !!", hour, minute);
+        createAlarm("2017XXX 한대희 !!", hour, minute);
     }
 
     public void createAlarm(String message, int hour, int minutes) {
