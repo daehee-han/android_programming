@@ -35,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
         // 프레퍼런스에 값을 기록하려면 Editor 객체가 필요
         SharedPreferences.Editor editor = settings.edit();
         imageName = value.getText().toString();
-        editor.putString("imageName", imageName);
+        editor.putString("imageName", imageName + " Restored");
         // 변경을 최종 반영한다.
         editor.commit();
     }
