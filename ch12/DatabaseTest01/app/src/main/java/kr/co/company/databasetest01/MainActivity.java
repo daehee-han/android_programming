@@ -13,24 +13,24 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 class DBHelper extends SQLiteOpenHelper {
-private static final String DATABASE_NAME = "mycontacts.db";
+    private static final String DATABASE_NAME = "mycontacts.db";
 
-private static final int DATABASE_VERSION = 2;
+    private static final int DATABASE_VERSION = 2;
 
-public DBHelper(Context context) {
-        super(context, DATABASE_NAME, null, DATABASE_VERSION);
-        }
+    public DBHelper(Context context) {
+            super(context, DATABASE_NAME, null, DATABASE_VERSION);
+    }
 
-public void onCreate(SQLiteDatabase db) {
-        db.execSQL("CREATE TABLE contacts ( _id INTEGER PRIMARY KEY" +
-        " AUTOINCREMENT, name TEXT, tel TEXT);");
-        }
+    public void onCreate(SQLiteDatabase db) {
+            db.execSQL("CREATE TABLE contacts ( _id INTEGER PRIMARY KEY" +
+            " AUTOINCREMENT, name TEXT, tel TEXT);");
+    }
 
-public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-        db.execSQL("DROP TABLE IF EXISTS contacts");
-        onCreate(db);
-        }
-        }
+    public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
+            db.execSQL("DROP TABLE IF EXISTS contacts");
+            onCreate(db);
+    }
+}
 
 public class MainActivity extends AppCompatActivity {
     DBHelper helper;
