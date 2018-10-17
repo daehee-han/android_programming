@@ -1,23 +1,23 @@
 //Implement Runnable Interface...
  class ImplementsRunnable implements Runnable {
-
-private int counter = 0;
-
-public void run() {
-    counter++;
-    System.out.println("ImplementsRunnable : Counter : " + counter);
- }
+    private int counter = 0;
+    public void run() {
+        for (int i = 0; i < 5; i++) { 
+            counter++;
+            System.out.println("Counter " + counter);
+        }
+    }
 }
 
 //Extend Thread class...
 class ExtendsThread extends Thread {
-
-private int counter = 0;
-
-public void run() {
-    counter++;
-    System.out.println("ExtendsThread : Counter : " + counter);
- }
+    private int counter = 0;
+    public void run() {
+        for (int i = 0; i < 5; i++) { 
+            counter++;
+            System.out.println("Counter " + counter);
+        }
+    }
 }
 
 //Use above classes here in main to understand the differences more clearly...
