@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/myshape">
+
+    <EditText
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:hint="아이디를 입력하시오"
+        android:id="@+id/editText1"
+        android:inputType="text"
+        android:layout_margin="10dp"
+        android:gravity="center">
+        <requestFocus></requestFocus>
+    </EditText>
+    <EditText
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:hint="패스워드를 입력하시오"
+        android:id="@+id/editText2"
+        android:inputType="textPassword"
+        android:layout_margin="10dp"
+        android:gravity="center">
+    </EditText>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/button1"
+        android:text="로그인"></Button>
+</LinearLayout>
