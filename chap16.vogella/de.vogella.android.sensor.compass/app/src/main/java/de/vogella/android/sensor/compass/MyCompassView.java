@@ -43,7 +43,7 @@ public class MyCompassView extends View {
 				(float) (yPoint - radius
 						* Math.cos((double) (-position) / 180 * 3.143)), paint);
 
-		canvas.drawText(String.valueOf(position), xPoint, yPoint, paint);
+		canvas.drawText("VAL : " + String.valueOf(position), xPoint, yPoint, paint);
 
 	}
 
