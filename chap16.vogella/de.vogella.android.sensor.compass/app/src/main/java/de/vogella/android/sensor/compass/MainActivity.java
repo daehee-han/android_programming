@@ -27,10 +27,9 @@ public class MainActivity extends Activity implements SensorEventListener {
 		compassView = new MyCompassView(this);
 		setContentView(compassView);
 
-		sensorService = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
-		//sensor = sensorService.getDefaultSensor(Sensor.TYPE_ORIENTATION);
-		accelerometer = sensorService.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
-		magnetometer = sensorService.getDefaultSensor(Sensor.TYPE_MAGNETIC_FIELD);
+		sensorService = (SensorManager) XXXX(Context.SENSOR_SERVICE);
+		accelerometer = sensorService.XXXX(Sensor.TYPE_ACCELEROMETER);
+		magnetometer = sensorService.XXXX(Sensor.TYPE_MAGNETIC_FIELD);
 
 		if (accelerometer == null || magnetometer == null)  {
 			Log.e("Compass MainActivity", "No Sensor");
@@ -43,14 +42,14 @@ public class MainActivity extends Activity implements SensorEventListener {
 	@Override
 	protected void onResume() {
 		super.onResume();
-		sensorService.registerListener(this, accelerometer, SensorManager.SENSOR_DELAY_UI);
-		sensorService.registerListener(this, magnetometer, SensorManager.SENSOR_DELAY_UI);
+		sensorService.XXXX(this, accelerometer, SensorManager.SENSOR_DELAY_UI);
+		sensorService.XXXX(this, magnetometer, SensorManager.SENSOR_DELAY_UI);
 	}
 
 	@Override
 	protected void onPause() {
 		super.onPause();
-		sensorService.unregisterListener(this);
+		sensorService.XXXX(this);
 	}
 
 	@Override
@@ -59,13 +58,13 @@ public class MainActivity extends Activity implements SensorEventListener {
 	}
 
 	@Override
-	public void onSensorChanged(SensorEvent event) {
+	public void XXXX(SensorEvent event) {
 		Log.i("Compass MainActivity", "Sensor event");
 		Toast.makeText(this, "Sensor event", Toast.LENGTH_LONG).show();
 
-		if (event.sensor.getType() == Sensor.TYPE_ACCELEROMETER)
+		if (event.sensor.XXXX() == Sensor.TYPE_ACCELEROMETER)
 			mGravity = event.values;
-		if (event.sensor.getType() == Sensor.TYPE_MAGNETIC_FIELD)
+		if (event.sensor.XXXX() == Sensor.TYPE_MAGNETIC_FIELD)
 			mGeomagnetic = event.values;
 		if (mGravity != null && mGeomagnetic != null) {
 			float R[] = new float[9];
