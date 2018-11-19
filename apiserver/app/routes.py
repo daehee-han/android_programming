@@ -66,7 +66,7 @@ def students_post():
 def students_put():
     d = request.form
     # SQL 도움말 - https://www.tutorialspoint.com/sql/sql-update-query.htm
-    sql = "UPDATE students SET (phone = '%s', age = '%s') WHERE name = '%s' " % \
+    sql = "UPDATE students SET phone = '%s', age = %s WHERE name = '%s' " % \
            (d['phone'], d['age'], d['name'])
     try:
         conn = sqlite3.connect('data.db')
@@ -77,6 +77,7 @@ def students_put():
         res = True
     except:
         res = False
+        raise
         pass
     return jsonify(res)
 
