@@ -15,13 +15,13 @@ HTML = '''
   <!doctype html>
   <title>API Server</title>
   <h1>API Server</h1>
-  <p>  </p>
+  <p> This is API server for 'Mobile Programming' </p>
 '''
 
 @app.route('/')
 @app.route('/index')
 def index():
-    return "Hello, This API Server"
+    return HTML
 
 @app.route('/api/students')
 def students():
