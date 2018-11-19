@@ -27,7 +27,6 @@ def students():
     rows = c.execute("SELECT * FROM students") # Cursor object
     data = [r for r in rows]
     print(data)
-    
     return jsonify(data)
 
 @app.route('/api/students/<name>')
@@ -37,7 +36,6 @@ def students_name(name):
     rows = c.execute("SELECT * FROM students WHERE name = '%s' " % name)  # Cursor object
     data = [r for r in rows]
     print(data)
-
     return jsonify(data)
 
 @app.route('/api/students', methods=['POST'])
@@ -84,9 +82,8 @@ def students_put():
 
 
 @app.route('/api/students/name/<name>', methods=['DELETE'])
-def students_delete():
-    d = request.form
-    sql = "DELETE FROM students WHERE name = '%s' " % (d['name'])
+def students_delete(name):
+    sql = "DELETE FROM students WHERE name = '%s' " % (name)
     try:
         conn = sqlite3.connect('data.db')
         c = conn.cursor()
