@@ -9,16 +9,22 @@ c = conn.cursor()
 
 ## 테이블 STUDENTS
 try:
-  c.execute('''CREATE TABLE students
-               (name text, email text, phone text, age int)''')
-  c.execute("INSERT INTO students VALUES ('kim','kim@gmail.com','010-1234-0001', 10)")
-  c.execute("INSERT INTO students VALUES ('park','park@gmail.com','010-1234-0002', 20)")
-  c.execute("INSERT INTO students VALUES ('lee','lee@gmail.com','010-1234-0003', 30)")
-  c.execute("INSERT INTO students VALUES ('han','han@gmail.com','010-1234-0004', 40)")
+  table = 'students' # 테이블 이름
+  c.execute('''DROP TABLE %s ''' % table)
+  c.execute('''CREATE TABLE %s
+               (name text, email text, phone text, age int)''' % table)
+  print('Created %s' % table)
   conn.commit()
-  print('Created STUDENTS')
+  
+  c.execute("INSERT INTO %s VALUES ('kim','kim@gmail.com','010-1234-0001', 10)"  % table)
+  c.execute("INSERT INTO %s VALUES ('park','park@gmail.com','010-1234-0002', 20)"  % table)
+  c.execute("INSERT INTO %s VALUES ('lee','lee@gmail.com','010-1234-0003', 30)"  % table)
+  c.execute("INSERT INTO %s VALUES ('han','han@gmail.com','010-1234-0004', 40)"  % table)
+  print('Data Inserted into %s' % table)
+  conn.commit()
+  
 except:
-  print('Skip STUDENTS')
+  raise
   pass
 
 
