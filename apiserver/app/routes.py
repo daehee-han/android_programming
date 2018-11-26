@@ -1,6 +1,6 @@
 
 import sqlite3
-
+import json
 from flask import Flask, flash, redirect, render_template, \
      request, url_for, jsonify
 from app import app
@@ -25,9 +25,20 @@ def students():
     conn = sqlite3.connect('data.db')
     c = conn.cursor()
     rows = c.execute("SELECT * FROM students") # Cursor object
-    data = [r for r in rows]
-    print(data)
+    # data = [r for r in rows]  # list
+    
+    data = []
+    for r in rows:
+        print(r)
+        d = {}
+        d['name'] = r[0]
+        d['email'] = r[1]
+        d['phone'] = r[2]
+        d['age'] = r[3]
+        data.append(d)
+    print(json.dumps(data))
     return jsonify(data)
+    #return json.dumps(data)
 
 @app.route('/api/students/<name>')
 def students_name(name):
