@@ -11,6 +11,10 @@ c = conn.cursor()
 try:
   table = 'students' # 테이블 이름
   c.execute('''DROP TABLE %s ''' % table)
+except:
+  pass
+  
+try:
   c.execute('''CREATE TABLE %s
                (name text, email text, phone text, age int)''' % table)
   print('Created %s' % table)
