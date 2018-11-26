@@ -2,7 +2,7 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 22
-    buildToolsVersion '25.0.0'
+
 
     defaultConfig {
         applicationId "kr.co.company.webdownload"
@@ -20,4 +20,6 @@ android {
 
 dependencies {
     compile 'com.android.support:support-v4:19.1.0'
+    implementation 'com.google.code.gson:gson:2.8.2'
+
 }
